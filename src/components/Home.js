@@ -275,26 +275,7 @@ function Home() {
                     </td>
                   </tr>
                 </MDBTableBody>
-              ) : (
-                currentPage ===0?(
-                data.map((item, index) => (
-                  <MDBTableBody key={index}>
-                    <tr>
-                      <th scope="row">{index + 1}</th>
-                      <td>{item.name}</td>
-                      <td>{item.username}</td>
-                      <td>{item.email}</td>
-                      <td>{item.phone}</td>
-                      <td>
-                        <Link to={`/${item.id}`}>
-                          <MDBBtn className="me-1" color="danger">
-                            Click Here
-                          </MDBBtn>
-                        </Link>
-                      </td>
-                    </tr>
-                  </MDBTableBody>
-                ))):( data.map((item, index) => (
+             ) :( data.map((item, index) => (
                     <MDBTableBody key={index}>
                       <tr>
                         <th scope="row">{index + 3*currentPage + 1}</th>
@@ -312,7 +293,7 @@ function Home() {
                       </tr>
                     </MDBTableBody>
                   )))
-              )}
+              }
               <Outlet />
             </MDBTable>
           </MDBCol>
